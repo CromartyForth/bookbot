@@ -13,15 +13,14 @@ def get_letter_count(text):
             letter_count[char] = 1
     return letter_count
 
-def sort_on(items):
-    return items["num"]
 
 def get_sorted_dictionary(dictionary):
 
+    list_of_numbers = lambda items : items["num"]
     expanded_dictionary = []
 
     for key in dictionary.keys():
         expanded_dictionary.append({"char" : key, "num" : dictionary[key]})
 
-    expanded_dictionary.sort(reverse=True, key=sort_on)
+    expanded_dictionary.sort(reverse=True, key=list_of_numbers )
     return expanded_dictionary
